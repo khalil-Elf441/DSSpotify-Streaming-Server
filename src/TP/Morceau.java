@@ -1,5 +1,10 @@
 package TP;
 
+
+/**
+ * @author khalil
+ * class Morceau : structure principale des fichiers audio
+ */
 public class Morceau {
 	
 	
