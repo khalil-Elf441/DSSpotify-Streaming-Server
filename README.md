@@ -3,7 +3,7 @@
 Ce projet presente le serveur Streaming des fichiers audio dans Architecture distribuée, 
 aussi la manipulation des morceaux audio.
 
-### Comment lancer le Steaming Audio ?
+### Comment tester le Streaming Audio ?
 - Run Application -> ServerMain.java. </br>
 - _Dans VLC:_ Media -> Ouvrir un flux reseau -> Enter URL de streaming afficher en console (Streaming ON < URL >) -> Lire
 
