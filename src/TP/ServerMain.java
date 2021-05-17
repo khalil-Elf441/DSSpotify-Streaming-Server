@@ -11,7 +11,7 @@ public class ServerMain {
 	public static void main(String[] args) {
 		
 		//Gestion des erreurs
-		 //rechargement des fichier dll de VLC
+		//rechargement des fichier dll de VLC
 		//source : https://stackoverflow.com/questions/8608117/vlcj-unable-to-load-library-libvlc-in-64bit-os
 		
 		 NativeDiscovery nd = new NativeDiscovery();
@@ -23,7 +23,7 @@ public class ServerMain {
 		 String vlcLibCoreName = RuntimeUtil.getLibVlcCoreName();
 		 Native.loadLibrary(vlcLibName, LibVlc.class);
 		 
-
+		 //Partie lancement ICE
 		  try(com.zeroc.Ice.Communicator communicator = com.zeroc.Ice.Util.initialize(args)){
 
 		    com.zeroc.Ice.ObjectAdapter adapter =

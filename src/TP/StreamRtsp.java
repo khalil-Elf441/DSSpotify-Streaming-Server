@@ -22,14 +22,14 @@ import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.headless.HeadlessMediaPlayer;
 
 /**
- * Exemple de Streaming Audio en RTSP de fichier souf_sf.mp3 en java
+ * Exemple de Streaming Audio en RTSP(Real Time Streaming Protocol) de fichier souf_sf.mp3 en java
  * source : http://www.javased.com/index.php?source_dir=vlcj/src/test/java/uk/co/caprica/vlcj/test/streaming/
  */ 
 public class StreamRtsp { 
 	
-	static String InterfaceAdress = "localhost";
+	String InterfaceAdress = "localhost";
 	
-    
+    //lien de lancement de streaming
     public void Streaming() {
 		try {
 			start(InterfaceAdress, 5555,  "resource_files/Souf_sf.mp3", "souf");
@@ -40,7 +40,7 @@ public class StreamRtsp {
 		}
 	}
     
-
+    //creation de lien de streaming en RTSP 
     private String formatRtspStream(String serverAddress, int serverPort, String id) {
         StringBuilder stringbuilder = new StringBuilder(60);
         stringbuilder.append(":sout=#rtp{sdp=rtsp://@");
@@ -53,8 +53,8 @@ public class StreamRtsp {
         return stringbuilder.toString();
     }
 
-
-      void start(String address, int port, String music,String type) throws Exception {
+    //options de Streaming
+     void start(String address, int port, String music,String type) throws Exception {
         String media = music;
         String options = formatRtspStream(address, port, type);
 
@@ -62,6 +62,7 @@ public class StreamRtsp {
 
         MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
         HeadlessMediaPlayer mediaPlayer = mediaPlayerFactory.newHeadlessMediaPlayer();
+        //Répétition de lecture de fichier audio
         mediaPlayer.setRepeat(true);
         mediaPlayer.playMedia(media,
             options,
