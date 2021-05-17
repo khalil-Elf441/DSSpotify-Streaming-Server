@@ -6,9 +6,14 @@ public class Morceau {
 	private String Titre;
 	private String Auteur;
 	private String path;
-	
-	
-	
+		
+	public Morceau(String titre, String auteur, String path) {
+		super();
+		Titre = titre;
+		Auteur = auteur;
+		this.path = path;
+	}
+
 	public String getTitre() {
 		return Titre;
 	}
@@ -27,6 +32,13 @@ public class Morceau {
 	public void setPath(String path) {
 		this.path = path;
 	}
+
+	@Override
+	public String toString() {
+		return "Morceau [Titre=" + Titre + ", Auteur=" + Auteur + ", path=" + path + ", toString()=" + "]";
+	}
+	
+	
 	
 
 }

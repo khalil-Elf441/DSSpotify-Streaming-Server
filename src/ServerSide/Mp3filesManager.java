@@ -17,11 +17,11 @@ package ServerSide;
 
 public interface Mp3filesManager extends com.zeroc.Ice.Object
 {
-    String ajouterMorceauMp3(String title, String Auteur, String path, com.zeroc.Ice.Current current);
+    boolean ajouterMorceauMp3(String title, String Auteur, String path, com.zeroc.Ice.Current current);
 
-    String supprimerMorceauMp3(String path, com.zeroc.Ice.Current current);
+    boolean supprimerMorceauMp3(String title, String path, com.zeroc.Ice.Current current);
 
-    void modifierMorceauMp3(String title, String Auteur, String newtitle, com.zeroc.Ice.Current current);
+    boolean modifierMorceauMp3(String title, String Auteur, String newtitle, com.zeroc.Ice.Current current);
 
     String findByTitreAuteur(String title, String Auteur, com.zeroc.Ice.Current current);
 
@@ -67,9 +67,9 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
         iceP_Auteur = istr.readString();
         iceP_path = istr.readString();
         inS.endReadParams();
-        String ret = obj.ajouterMorceauMp3(iceP_title, iceP_Auteur, iceP_path, current);
+        boolean ret = obj.ajouterMorceauMp3(iceP_title, iceP_Auteur, iceP_path, current);
         com.zeroc.Ice.OutputStream ostr = inS.startWriteParams();
-        ostr.writeString(ret);
+        ostr.writeBool(ret);
         inS.endWriteParams(ostr);
         return inS.setResult(ostr);
     }
@@ -85,12 +85,14 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
     {
         com.zeroc.Ice.Object._iceCheckMode(null, current.mode);
         com.zeroc.Ice.InputStream istr = inS.startReadParams();
+        String iceP_title;
         String iceP_path;
+        iceP_title = istr.readString();
         iceP_path = istr.readString();
         inS.endReadParams();
-        String ret = obj.supprimerMorceauMp3(iceP_path, current);
+        boolean ret = obj.supprimerMorceauMp3(iceP_title, iceP_path, current);
         com.zeroc.Ice.OutputStream ostr = inS.startWriteParams();
-        ostr.writeString(ret);
+        ostr.writeBool(ret);
         inS.endWriteParams(ostr);
         return inS.setResult(ostr);
     }
@@ -113,8 +115,11 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
         iceP_Auteur = istr.readString();
         iceP_newtitle = istr.readString();
         inS.endReadParams();
-        obj.modifierMorceauMp3(iceP_title, iceP_Auteur, iceP_newtitle, current);
-        return inS.setResult(inS.writeEmptyParams());
+        boolean ret = obj.modifierMorceauMp3(iceP_title, iceP_Auteur, iceP_newtitle, current);
+        com.zeroc.Ice.OutputStream ostr = inS.startWriteParams();
+        ostr.writeBool(ret);
+        inS.endWriteParams(ostr);
+        return inS.setResult(ostr);
     }
 
     /**

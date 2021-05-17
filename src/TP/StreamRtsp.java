@@ -17,54 +17,23 @@ package TP;
  * 
  * Copyright 2009, 2010, 2011, 2012 Caprica Software Limited. 
  */
- 
- 
- 
-import com.sun.jna.Native;
 
-import uk.co.caprica.vlcj.binding.LibVlc;
-import uk.co.caprica.vlcj.discovery.NativeDiscovery;
-import uk.co.caprica.vlcj.player.MediaPlayerFactory; 
+import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.headless.HeadlessMediaPlayer;
-import uk.co.caprica.vlcj.runtime.RuntimeUtil;
-import uk.co.caprica.vlcj.test.VlcjTest; 
- 
+
 /**
- * Exemple de Streaming Audio en RTSP
+ * Exemple de Streaming Audio en RTSP de fichier souf_sf.mp3 en java
  * source : http://www.javased.com/index.php?source_dir=vlcj/src/test/java/uk/co/caprica/vlcj/test/streaming/
  */ 
 public class StreamRtsp { 
 	
-	static String myNetworkInterface = "localhost";
+	static String InterfaceAdress = "localhost";
 	
- /* Main Test
-    public static void main(String[] args) throws Exception { 
-    	
-        //rechargement des fichier dll de VLC
-		
-  		 NativeDiscovery nd = new NativeDiscovery();
-  		 if (!nd.discover()) {
-  		     System.out.println("VLC not found");
-  		     System.exit(-1);
-  		 }   
-  		 String vlcLibName = RuntimeUtil.getLibVlcLibraryName();
-  		 String vlcLibCoreName = RuntimeUtil.getLibVlcLibraryName();
-  		 Native.loadLibrary(vlcLibName, LibVlc.class);
- 
-       //
-  		Streaming();
-  		 //
-  		
-  	  // Don't exit 
-        Thread.currentThread().join(); 
-    } 
-    */
     
     public void Streaming() {
 		try {
-			String dataDir = "";
-			start(myNetworkInterface, 5555, dataDir  + "resource_files/Souf_sf.mp3", "souf");
-			String soufStreaming = "rtsp://@" + myNetworkInterface + ":5555/souf";
+			start(InterfaceAdress, 5555,  "resource_files/Souf_sf.mp3", "souf");
+			String soufStreaming = "rtsp://@" + InterfaceAdress + ":5555/souf";
 			System.out.println("Streaming souf ON : " + soufStreaming);
 		} catch (Exception e) {
 			e.printStackTrace();
