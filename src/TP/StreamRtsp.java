@@ -30,14 +30,14 @@ import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 import uk.co.caprica.vlcj.test.VlcjTest; 
  
 /**
- * An example of how to stream a media file using RTSP. 
- * <p> 
- * The client specifies an MRL of <code>rtsp://@127.0.0.1:5555/demo</code> 
+ * Exemple de Streaming Audio en RTSP
+ * source : http://www.javased.com/index.php?source_dir=vlcj/src/test/java/uk/co/caprica/vlcj/test/streaming/
  */ 
 public class StreamRtsp { 
 	
 	static String myNetworkInterface = "localhost";
- /*
+	
+ /* Main Test
     public static void main(String[] args) throws Exception { 
     	
         //rechargement des fichier dll de VLC
@@ -52,7 +52,7 @@ public class StreamRtsp {
   		 Native.loadLibrary(vlcLibName, LibVlc.class);
  
        //
-  		startTele();
+  		Streaming();
   		 //
   		
   	  // Don't exit 
@@ -60,7 +60,7 @@ public class StreamRtsp {
     } 
     */
     
-    public static void Streaming() {
+    public void Streaming() {
 		try {
 			String dataDir = "";
 			start(myNetworkInterface, 5555, dataDir  + "resource_files/Souf_sf.mp3", "souf");
@@ -71,34 +71,21 @@ public class StreamRtsp {
 		}
 	}
     
-    /**
-     * 
-     * @param serverAddress
-     * @param serverPort
-     * @return  mediaOptions for rtp stream wih vlc
-     */
-    private static String formatRtspStream(String serverAddress, int serverPort, String id) {
-        StringBuilder sb = new StringBuilder(60);
-        sb.append(":sout=#rtp{sdp=rtsp://@");
-        sb.append(serverAddress);
-        sb.append(':');
-        sb.append(serverPort);
-        sb.append('/');
-        sb.append(id);
-        sb.append("}");
-        return sb.toString();
+
+    private String formatRtspStream(String serverAddress, int serverPort, String id) {
+        StringBuilder stringbuilder = new StringBuilder(60);
+        stringbuilder.append(":sout=#rtp{sdp=rtsp://@");
+        stringbuilder.append(serverAddress);
+        stringbuilder.append(':');
+        stringbuilder.append(serverPort);
+        stringbuilder.append('/');
+        stringbuilder.append(id);
+        stringbuilder.append("}");
+        return stringbuilder.toString();
     }
 
-    /**
-     * Start streaming of music by adding music to the playList
-     * 
-     * @param dir
-     * @param address
-     * @param port
-     * @param musique
-     * @throws Exception
-     */
-     static void start(String address, int port, String music,String type) throws Exception {
+
+      void start(String address, int port, String music,String type) throws Exception {
         String media = music;
         String options = formatRtspStream(address, port, type);
 

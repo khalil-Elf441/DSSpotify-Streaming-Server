@@ -17,11 +17,11 @@ package ServerSide;
 
 public interface Mp3filesManager extends com.zeroc.Ice.Object
 {
-    String addNewMorceauMp3(String title, String Auteur, String path, com.zeroc.Ice.Current current);
+    String ajouterMorceauMp3(String title, String Auteur, String path, com.zeroc.Ice.Current current);
 
-    String deleteMorceauMp3(String path, com.zeroc.Ice.Current current);
+    String supprimerMorceauMp3(String path, com.zeroc.Ice.Current current);
 
-    void setMorceauMp3(String title, String Auteur, String newtitle, com.zeroc.Ice.Current current);
+    void modifierMorceauMp3(String title, String Auteur, String newtitle, com.zeroc.Ice.Current current);
 
     String findByTitreAuteur(String title, String Auteur, com.zeroc.Ice.Current current);
 
@@ -56,7 +56,7 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
      * @param current -
      * @return -
     **/
-    static java.util.concurrent.CompletionStage<com.zeroc.Ice.OutputStream> _iceD_addNewMorceauMp3(Mp3filesManager obj, final com.zeroc.IceInternal.Incoming inS, com.zeroc.Ice.Current current)
+    static java.util.concurrent.CompletionStage<com.zeroc.Ice.OutputStream> _iceD_ajouterMorceauMp3(Mp3filesManager obj, final com.zeroc.IceInternal.Incoming inS, com.zeroc.Ice.Current current)
     {
         com.zeroc.Ice.Object._iceCheckMode(null, current.mode);
         com.zeroc.Ice.InputStream istr = inS.startReadParams();
@@ -67,7 +67,7 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
         iceP_Auteur = istr.readString();
         iceP_path = istr.readString();
         inS.endReadParams();
-        String ret = obj.addNewMorceauMp3(iceP_title, iceP_Auteur, iceP_path, current);
+        String ret = obj.ajouterMorceauMp3(iceP_title, iceP_Auteur, iceP_path, current);
         com.zeroc.Ice.OutputStream ostr = inS.startWriteParams();
         ostr.writeString(ret);
         inS.endWriteParams(ostr);
@@ -81,14 +81,14 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
      * @param current -
      * @return -
     **/
-    static java.util.concurrent.CompletionStage<com.zeroc.Ice.OutputStream> _iceD_deleteMorceauMp3(Mp3filesManager obj, final com.zeroc.IceInternal.Incoming inS, com.zeroc.Ice.Current current)
+    static java.util.concurrent.CompletionStage<com.zeroc.Ice.OutputStream> _iceD_supprimerMorceauMp3(Mp3filesManager obj, final com.zeroc.IceInternal.Incoming inS, com.zeroc.Ice.Current current)
     {
         com.zeroc.Ice.Object._iceCheckMode(null, current.mode);
         com.zeroc.Ice.InputStream istr = inS.startReadParams();
         String iceP_path;
         iceP_path = istr.readString();
         inS.endReadParams();
-        String ret = obj.deleteMorceauMp3(iceP_path, current);
+        String ret = obj.supprimerMorceauMp3(iceP_path, current);
         com.zeroc.Ice.OutputStream ostr = inS.startWriteParams();
         ostr.writeString(ret);
         inS.endWriteParams(ostr);
@@ -102,7 +102,7 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
      * @param current -
      * @return -
     **/
-    static java.util.concurrent.CompletionStage<com.zeroc.Ice.OutputStream> _iceD_setMorceauMp3(Mp3filesManager obj, final com.zeroc.IceInternal.Incoming inS, com.zeroc.Ice.Current current)
+    static java.util.concurrent.CompletionStage<com.zeroc.Ice.OutputStream> _iceD_modifierMorceauMp3(Mp3filesManager obj, final com.zeroc.IceInternal.Incoming inS, com.zeroc.Ice.Current current)
     {
         com.zeroc.Ice.Object._iceCheckMode(null, current.mode);
         com.zeroc.Ice.InputStream istr = inS.startReadParams();
@@ -113,7 +113,7 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
         iceP_Auteur = istr.readString();
         iceP_newtitle = istr.readString();
         inS.endReadParams();
-        obj.setMorceauMp3(iceP_title, iceP_Auteur, iceP_newtitle, current);
+        obj.modifierMorceauMp3(iceP_title, iceP_Auteur, iceP_newtitle, current);
         return inS.setResult(inS.writeEmptyParams());
     }
 
@@ -143,14 +143,14 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
     /** @hidden */
     final static String[] _iceOps =
     {
-        "addNewMorceauMp3",
-        "deleteMorceauMp3",
+        "ajouterMorceauMp3",
         "findByTitreAuteur",
         "ice_id",
         "ice_ids",
         "ice_isA",
         "ice_ping",
-        "setMorceauMp3"
+        "modifierMorceauMp3",
+        "supprimerMorceauMp3"
     };
 
     /** @hidden */
@@ -168,35 +168,35 @@ public interface Mp3filesManager extends com.zeroc.Ice.Object
         {
             case 0:
             {
-                return _iceD_addNewMorceauMp3(this, in, current);
+                return _iceD_ajouterMorceauMp3(this, in, current);
             }
             case 1:
             {
-                return _iceD_deleteMorceauMp3(this, in, current);
+                return _iceD_findByTitreAuteur(this, in, current);
             }
             case 2:
             {
-                return _iceD_findByTitreAuteur(this, in, current);
+                return com.zeroc.Ice.Object._iceD_ice_id(this, in, current);
             }
             case 3:
             {
-                return com.zeroc.Ice.Object._iceD_ice_id(this, in, current);
+                return com.zeroc.Ice.Object._iceD_ice_ids(this, in, current);
             }
             case 4:
             {
-                return com.zeroc.Ice.Object._iceD_ice_ids(this, in, current);
+                return com.zeroc.Ice.Object._iceD_ice_isA(this, in, current);
             }
             case 5:
             {
-                return com.zeroc.Ice.Object._iceD_ice_isA(this, in, current);
+                return com.zeroc.Ice.Object._iceD_ice_ping(this, in, current);
             }
             case 6:
             {
-                return com.zeroc.Ice.Object._iceD_ice_ping(this, in, current);
+                return _iceD_modifierMorceauMp3(this, in, current);
             }
             case 7:
             {
-                return _iceD_setMorceauMp3(this, in, current);
+                return _iceD_supprimerMorceauMp3(this, in, current);
             }
         }
 

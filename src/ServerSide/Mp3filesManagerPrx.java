@@ -17,24 +17,24 @@ package ServerSide;
 
 public interface Mp3filesManagerPrx extends com.zeroc.Ice.ObjectPrx
 {
-    default String addNewMorceauMp3(String title, String Auteur, String path)
+    default String ajouterMorceauMp3(String title, String Auteur, String path)
     {
-        return addNewMorceauMp3(title, Auteur, path, com.zeroc.Ice.ObjectPrx.noExplicitContext);
+        return ajouterMorceauMp3(title, Auteur, path, com.zeroc.Ice.ObjectPrx.noExplicitContext);
     }
 
-    default String addNewMorceauMp3(String title, String Auteur, String path, java.util.Map<String, String> context)
+    default String ajouterMorceauMp3(String title, String Auteur, String path, java.util.Map<String, String> context)
     {
-        return _iceI_addNewMorceauMp3Async(title, Auteur, path, context, true).waitForResponse();
+        return _iceI_ajouterMorceauMp3Async(title, Auteur, path, context, true).waitForResponse();
     }
 
-    default java.util.concurrent.CompletableFuture<java.lang.String> addNewMorceauMp3Async(String title, String Auteur, String path)
+    default java.util.concurrent.CompletableFuture<java.lang.String> ajouterMorceauMp3Async(String title, String Auteur, String path)
     {
-        return _iceI_addNewMorceauMp3Async(title, Auteur, path, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
+        return _iceI_ajouterMorceauMp3Async(title, Auteur, path, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
     }
 
-    default java.util.concurrent.CompletableFuture<java.lang.String> addNewMorceauMp3Async(String title, String Auteur, String path, java.util.Map<String, String> context)
+    default java.util.concurrent.CompletableFuture<java.lang.String> ajouterMorceauMp3Async(String title, String Auteur, String path, java.util.Map<String, String> context)
     {
-        return _iceI_addNewMorceauMp3Async(title, Auteur, path, context, false);
+        return _iceI_ajouterMorceauMp3Async(title, Auteur, path, context, false);
     }
 
     /**
@@ -46,9 +46,9 @@ public interface Mp3filesManagerPrx extends com.zeroc.Ice.ObjectPrx
      * @param sync -
      * @return -
      **/
-    default com.zeroc.IceInternal.OutgoingAsync<java.lang.String> _iceI_addNewMorceauMp3Async(String iceP_title, String iceP_Auteur, String iceP_path, java.util.Map<String, String> context, boolean sync)
+    default com.zeroc.IceInternal.OutgoingAsync<java.lang.String> _iceI_ajouterMorceauMp3Async(String iceP_title, String iceP_Auteur, String iceP_path, java.util.Map<String, String> context, boolean sync)
     {
-        com.zeroc.IceInternal.OutgoingAsync<java.lang.String> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "addNewMorceauMp3", null, sync, null);
+        com.zeroc.IceInternal.OutgoingAsync<java.lang.String> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "ajouterMorceauMp3", null, sync, null);
         f.invoke(true, context, null, ostr -> {
                      ostr.writeString(iceP_title);
                      ostr.writeString(iceP_Auteur);
@@ -61,24 +61,24 @@ public interface Mp3filesManagerPrx extends com.zeroc.Ice.ObjectPrx
         return f;
     }
 
-    default String deleteMorceauMp3(String path)
+    default String supprimerMorceauMp3(String path)
     {
-        return deleteMorceauMp3(path, com.zeroc.Ice.ObjectPrx.noExplicitContext);
+        return supprimerMorceauMp3(path, com.zeroc.Ice.ObjectPrx.noExplicitContext);
     }
 
-    default String deleteMorceauMp3(String path, java.util.Map<String, String> context)
+    default String supprimerMorceauMp3(String path, java.util.Map<String, String> context)
     {
-        return _iceI_deleteMorceauMp3Async(path, context, true).waitForResponse();
+        return _iceI_supprimerMorceauMp3Async(path, context, true).waitForResponse();
     }
 
-    default java.util.concurrent.CompletableFuture<java.lang.String> deleteMorceauMp3Async(String path)
+    default java.util.concurrent.CompletableFuture<java.lang.String> supprimerMorceauMp3Async(String path)
     {
-        return _iceI_deleteMorceauMp3Async(path, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
+        return _iceI_supprimerMorceauMp3Async(path, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
     }
 
-    default java.util.concurrent.CompletableFuture<java.lang.String> deleteMorceauMp3Async(String path, java.util.Map<String, String> context)
+    default java.util.concurrent.CompletableFuture<java.lang.String> supprimerMorceauMp3Async(String path, java.util.Map<String, String> context)
     {
-        return _iceI_deleteMorceauMp3Async(path, context, false);
+        return _iceI_supprimerMorceauMp3Async(path, context, false);
     }
 
     /**
@@ -88,9 +88,9 @@ public interface Mp3filesManagerPrx extends com.zeroc.Ice.ObjectPrx
      * @param sync -
      * @return -
      **/
-    default com.zeroc.IceInternal.OutgoingAsync<java.lang.String> _iceI_deleteMorceauMp3Async(String iceP_path, java.util.Map<String, String> context, boolean sync)
+    default com.zeroc.IceInternal.OutgoingAsync<java.lang.String> _iceI_supprimerMorceauMp3Async(String iceP_path, java.util.Map<String, String> context, boolean sync)
     {
-        com.zeroc.IceInternal.OutgoingAsync<java.lang.String> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "deleteMorceauMp3", null, sync, null);
+        com.zeroc.IceInternal.OutgoingAsync<java.lang.String> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "supprimerMorceauMp3", null, sync, null);
         f.invoke(true, context, null, ostr -> {
                      ostr.writeString(iceP_path);
                  }, istr -> {
@@ -101,24 +101,24 @@ public interface Mp3filesManagerPrx extends com.zeroc.Ice.ObjectPrx
         return f;
     }
 
-    default void setMorceauMp3(String title, String Auteur, String newtitle)
+    default void modifierMorceauMp3(String title, String Auteur, String newtitle)
     {
-        setMorceauMp3(title, Auteur, newtitle, com.zeroc.Ice.ObjectPrx.noExplicitContext);
+        modifierMorceauMp3(title, Auteur, newtitle, com.zeroc.Ice.ObjectPrx.noExplicitContext);
     }
 
-    default void setMorceauMp3(String title, String Auteur, String newtitle, java.util.Map<String, String> context)
+    default void modifierMorceauMp3(String title, String Auteur, String newtitle, java.util.Map<String, String> context)
     {
-        _iceI_setMorceauMp3Async(title, Auteur, newtitle, context, true).waitForResponse();
+        _iceI_modifierMorceauMp3Async(title, Auteur, newtitle, context, true).waitForResponse();
     }
 
-    default java.util.concurrent.CompletableFuture<Void> setMorceauMp3Async(String title, String Auteur, String newtitle)
+    default java.util.concurrent.CompletableFuture<Void> modifierMorceauMp3Async(String title, String Auteur, String newtitle)
     {
-        return _iceI_setMorceauMp3Async(title, Auteur, newtitle, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
+        return _iceI_modifierMorceauMp3Async(title, Auteur, newtitle, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
     }
 
-    default java.util.concurrent.CompletableFuture<Void> setMorceauMp3Async(String title, String Auteur, String newtitle, java.util.Map<String, String> context)
+    default java.util.concurrent.CompletableFuture<Void> modifierMorceauMp3Async(String title, String Auteur, String newtitle, java.util.Map<String, String> context)
     {
-        return _iceI_setMorceauMp3Async(title, Auteur, newtitle, context, false);
+        return _iceI_modifierMorceauMp3Async(title, Auteur, newtitle, context, false);
     }
 
     /**
@@ -130,9 +130,9 @@ public interface Mp3filesManagerPrx extends com.zeroc.Ice.ObjectPrx
      * @param sync -
      * @return -
      **/
-    default com.zeroc.IceInternal.OutgoingAsync<Void> _iceI_setMorceauMp3Async(String iceP_title, String iceP_Auteur, String iceP_newtitle, java.util.Map<String, String> context, boolean sync)
+    default com.zeroc.IceInternal.OutgoingAsync<Void> _iceI_modifierMorceauMp3Async(String iceP_title, String iceP_Auteur, String iceP_newtitle, java.util.Map<String, String> context, boolean sync)
     {
-        com.zeroc.IceInternal.OutgoingAsync<Void> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "setMorceauMp3", null, sync, null);
+        com.zeroc.IceInternal.OutgoingAsync<Void> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "modifierMorceauMp3", null, sync, null);
         f.invoke(false, context, null, ostr -> {
                      ostr.writeString(iceP_title);
                      ostr.writeString(iceP_Auteur);
