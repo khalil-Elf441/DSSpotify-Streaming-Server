@@ -1,6 +1,6 @@
 ### DSSpotify-Streaming-Server
 
-Ce projet presente le serveur Streaming des fichiers audio dans Architecture distribuée en utilisant le framework java **VLCj**, 
+Ce projet presente le serveur Streaming des fichiers audio dans Architecture distribuée qui permet le streaming grâce au framework java **VLCj**, 
 aussi la manipulation des morceaux audio.
 
 ### Comment tester le Streaming Audio ?
