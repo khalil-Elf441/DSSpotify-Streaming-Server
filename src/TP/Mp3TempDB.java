@@ -7,6 +7,10 @@ import java.util.Set;
 import com.zeroc.Ice.Current;
 
 
+/**
+ * @author etudiant
+ * stockage temporaire des mocceaux
+ */
 public class Mp3TempDB {
 	
 

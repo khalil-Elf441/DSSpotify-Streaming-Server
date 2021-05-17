@@ -6,6 +6,12 @@ import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.discovery.NativeDiscovery;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
+
+
+/**
+ * @author etudiant
+ * classe principale pour lancer le serveur
+ */
 public class ServerMain {
 
 	public static void main(String[] args) {

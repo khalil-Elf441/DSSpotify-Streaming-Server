@@ -4,6 +4,11 @@ import com.zeroc.Ice.Current;
 
 import ServerSide.Mp3filesManager;
 
+
+/**
+ * @author etudiant
+ * Implementation des fonctions ice
+ */
 public class Mp3filesManagerImpl implements Mp3filesManager{
 
 	
