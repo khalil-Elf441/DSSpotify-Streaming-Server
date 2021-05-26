@@ -9,4 +9,4 @@ aussi la manipulation des morceaux audio.
 
 ### Resources
 https://github.com/caprica/vlcj </br>
-http://www.javased.com/index.php?source_dir=vlcj/src/test/java/uk/co/caprica/vlcj/test/streaming/
+http://www.javased.com/index.php?source_dir=vlcj/src/test/java/uk/co/caprica/vlcj/test/streaming/"# DSSpotify-Streaming-Server-Middware" 
