@@ -33,8 +33,8 @@ public class ServerMain {
 		  try(com.zeroc.Ice.Communicator communicator = com.zeroc.Ice.Util.initialize(args)){
 
 		    com.zeroc.Ice.ObjectAdapter adapter =
-		             communicator.createObjectAdapterWithEndpoints("ServerSide", "default -p 10000");
-		         adapter.add(new Mp3filesManagerImpl(), com.zeroc.Ice.Util.stringToIdentity("ServerSide"));
+		             communicator.createObjectAdapterWithEndpoints("Mp3filesManager", "default -p 10000");
+		         adapter.add(new Mp3filesManagerImpl(), com.zeroc.Ice.Util.stringToIdentity("Mp3filesManager"));
 		         adapter.activate();
 		         
 		         System.out.println("Serveur is running !");

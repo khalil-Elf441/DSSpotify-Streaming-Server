@@ -10,13 +10,14 @@ import uk.co.caprica.vlcj.player.headless.HeadlessMediaPlayer;
 public class StreamRtsp { 
 	
 	String InterfaceAdress = "localhost";
+	 public static HeadlessMediaPlayer mediaPlayer;
 	
     //lien de lancement de streaming
-    public void Streaming() {
+    public void Streaming(String music) {
 		try {
-			start(InterfaceAdress, 5555,  "resource_files/Souf_sf.mp3", "souf");
-			String soufStreaming = "rtsp://@" + InterfaceAdress + ":5555/souf";
-			System.out.println("Streaming souf ON : " + soufStreaming);
+			start(InterfaceAdress, 5555,  "resource_files/"+music, "music");			
+			String soufStreaming = "rtsp://@" + InterfaceAdress + ":5555/music";
+			System.out.println("Streaming "+music+" ON : " + soufStreaming);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -43,7 +44,7 @@ public class StreamRtsp {
         System.out.println("Streaming '" + media + "' to '" + options + "'");
 
         MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
-        HeadlessMediaPlayer mediaPlayer = mediaPlayerFactory.newHeadlessMediaPlayer();
+         mediaPlayer = mediaPlayerFactory.newHeadlessMediaPlayer();
         //Répétition de lecture de fichier audio
         mediaPlayer.setRepeat(true);
         mediaPlayer.playMedia(media,
@@ -54,4 +55,25 @@ public class StreamRtsp {
             ":sout-keep"
         );
     }
+     
+     public void pauseStream() {
+    	 mediaPlayer.pause();
+    	 System.out.println("Media Player Pause / "+mediaPlayer.getMediaState());  	
+     }
+     
+     public void stopStream() {
+    	 mediaPlayer.stop();
+    	 System.out.println("Media Player Stop / "+mediaPlayer.getMediaState());
+     }
+     
+     public void resumeStream() {
+    	 mediaPlayer.start();
+    	 mediaPlayer.setRepeat(true);
+    	 System.out.println("Media Player Start / "+mediaPlayer.getMediaState());
+     }
+     
+     
+     
+     
+     
 }
